@@ -3,39 +3,39 @@ input_data = 'data/example.txt'
 
 # PART ONE
 
-# sum = 0
-#
-# with open(input_data, "r") as file:
-#     for line in file:
-#         print(f"Processing line: {line.strip()}")
-#         outer_check = 9
-#         while outer_check > 0:
-#             print(f"Looking for outer digit: {outer_check}")
-#             if str(outer_check) in line.strip():
-#                 outer_check_index = line.strip().find(str(outer_check))
-#                 if outer_check_index + 1 >= len(line.strip()):
-#                     outer_check -= 1
-#                     continue
-#                 if outer_check_index == len(line.strip()) - 1:
-#                     outer_check -= 1
-#                     continue
-#                 rest_of_the_line = line.strip()[outer_check_index + 1 :]
-#
-#                 inner_check = 9
-#                 while inner_check > 0:
-#                     print(f"  Looking for inner digit: {inner_check} in {rest_of_the_line}")
-#                     if str(inner_check) in rest_of_the_line:
-#                         sum += int(f"{outer_check}{inner_check}")
-#                         print(f"Found pair: {outer_check}{inner_check}")
-#                         break
-#                     else:
-#                         inner_check -= 1
-#                 else:
-#                     continue
-#                 break
-#             else:
-#                 outer_check -= 1
-# print(sum)
+sum = 0
+
+with open(input_data, "r") as file:
+    for line in file:
+        print(f"Processing line: {line.strip()}")
+        outer_check = 9
+        while outer_check > 0:
+            print(f"Looking for outer digit: {outer_check}")
+            if str(outer_check) in line.strip():
+                outer_check_index = line.strip().find(str(outer_check))
+                if outer_check_index + 1 >= len(line.strip()):
+                    outer_check -= 1
+                    continue
+                if outer_check_index == len(line.strip()) - 1:
+                    outer_check -= 1
+                    continue
+                rest_of_the_line = line.strip()[outer_check_index + 1 :]
+
+                inner_check = 9
+                while inner_check > 0:
+                    print(f"  Looking for inner digit: {inner_check} in {rest_of_the_line}")
+                    if str(inner_check) in rest_of_the_line:
+                        sum += int(f"{outer_check}{inner_check}")
+                        print(f"Found pair: {outer_check}{inner_check}")
+                        break
+                    else:
+                        inner_check -= 1
+                else:
+                    continue
+                break
+            else:
+                outer_check -= 1
+print(sum)
 
 # PART TWO
 
